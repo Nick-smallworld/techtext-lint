@@ -1,7 +1,6 @@
 // vim:set ts=2 et:
 const TextLintEngine = require('textlint').TextLintEngine;
 const express = require('express');
-const cors = require('cors')
 const bodyParser = require('body-parser');
 const app = express();
 const PORT = process.env.PORT || 5000
@@ -14,10 +13,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-// allow cors
-app.use(cors());
-
-// 8080番ポートで待ちうける
+// 5000番ポートで待ちうける
 app.listen(PORT, () => {
     console.log('Running at Port 5000...');
 });
