@@ -3,7 +3,7 @@ const TextLintEngine = require('textlint').TextLintEngine;
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 8080
 
 // 静的ファイルをpublic でホスト
 app.use('/', express.static('public'));
@@ -13,9 +13,9 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
-// 5000番ポートで待ちうける
+// 8080番ポートで待ちうける
 app.listen(PORT, () => {
-    console.log('Running at Port 5000...');
+    console.log('Running at Port 8080...');
 });
 
 app.post('/', (req, res, next) => {
@@ -32,7 +32,7 @@ app.post('/', (req, res, next) => {
 
 // 404エラー
 app.use((req, res) => {
-    var url = req.protocol + '://' + req.headers.host + req.url;
+    const url = req.protocol + '://' + req.headers.host + req.url;
     console.log(url);
     res.sendStatus(404);
 });
