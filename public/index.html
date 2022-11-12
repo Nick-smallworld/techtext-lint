@@ -72,7 +72,7 @@
       const text = ace.edit("editor").getValue();
       const json = { "text": text };
 
-      fetch('/', {
+      fetch('/api/check', {
 
         method: 'POST',
         headers: {

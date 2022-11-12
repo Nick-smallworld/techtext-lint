@@ -18,7 +18,7 @@ app.listen(PORT, () => {
     console.log('Running at Port 8080...');
 });
 
-app.post('/', (req, res, next) => {
+app.post('/api/check', (req, res, next) => {
     const req_text = req.body.text;
     const options = {
     };
